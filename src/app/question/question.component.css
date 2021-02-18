@@ -1,0 +1,45 @@
+.question {
+    max-width: 800px;
+    margin: 2em auto;
+
+    font-size: 24px;
+
+    padding: 2em 4em;
+
+    box-shadow: 0px 0px 5px 1px #264653;
+    border-radius: 1em;
+}
+
+.question__answers {
+    list-style: none;
+    padding: 0;
+}
+
+.question__answers__answer {
+    border: 1px solid #264653;
+
+    padding: 0.6em;
+    margin: 0.4em 0;
+    border-radius: 0.4em;
+
+    transition: all ease 0.2s;
+}
+
+.question__answers__answer:hover {
+    transform: scale(1.01);
+}
+
+.question__answers__answer--selected {
+    background: #264653;
+    color: white;
+}
+
+.question__answers__answer--correct {
+    background: #2a9d8f;
+    color: white;
+}
+
+.question__answers__answer--wrong {
+    background: #e63946;
+    color: white;
+}

@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+button {
+    background: #2a9d8f;
+    color: white;
+    padding: 0.3em 0.8em;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 0.2em; 
+}
