@@ -1,10 +1,10 @@
 <div class="quiz">
-    <app-question
+    <quiz-question
      *ngFor="let question of questions"
      [question]="question"
      [locked]="submited || timeout"
      (select)="registerAnswer($event)"
-    ></app-question>
+    ></quiz-question>
     
     <button (click)="onSubmit()" [disabled]="submited || timeout">Submit</button>
 

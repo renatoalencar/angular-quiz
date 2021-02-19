@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { tap } from 'rxjs/operators';
 import { Question } from '../question';
 import { TriviaService } from '../trivia.service';
 
 @Component({
-  selector: 'app-quiz',
+  selector: 'quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css']
 })

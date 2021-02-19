@@ -3,7 +3,7 @@ import { interval, Observable } from 'rxjs';
 import { map, takeWhile } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-countdown',
+  selector: 'quiz-countdown',
   templateUrl: './countdown.component.html',
   styleUrls: ['./countdown.component.css']
 })
