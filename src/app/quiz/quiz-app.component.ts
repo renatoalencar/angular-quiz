@@ -4,7 +4,7 @@ import { Component } from "@angular/core";
     selector: 'quiz-app',
     template: `
         <quiz [timeout]="timeout"></quiz>
-        <quiz-countdown [time]="10" (timeout)="onTimeout()"></quiz-countdown>
+        <quiz-countdown [time]="60" (timeout)="onTimeout()"></quiz-countdown>
     `
 })
 export class QuizApp{
