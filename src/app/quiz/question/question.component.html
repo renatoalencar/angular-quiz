@@ -1,6 +1,6 @@
 <div class="question">
     <p class="question__subject">
-      {{question.question}}
+      {{question.question | unescape}}
     </p>
     
     <ul class="question__answers">
@@ -10,6 +10,6 @@
           [class.question__answers__answer--wrong]="locked && selectedAnswer === answer && answer !== question.correct_answer"
           *ngFor="let answer of answers"
           (click)="onSelectAnswer(answer)"
-          >{{answer}}</li>
+          >{{answer | unescape}}</li>
     </ul>
   </div>
