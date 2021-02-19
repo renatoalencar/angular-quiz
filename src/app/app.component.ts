@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Question } from './question';
-import { TriviaService } from './trivia.service';
+import { interval, Observable } from 'rxjs';
+import { map, takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -8,35 +8,15 @@ import { TriviaService } from './trivia.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  questions: Question[];
-  submited: boolean = false;
-  answers: Record<string, 'correct' | 'incorrect'> = {};
-
-  result: number = null;
-
-  constructor(private trivia: TriviaService) {}
+  time: number;
 
   ngOnInit() {
-    this.getQuestions();
-  }
-
-  getQuestions() {
-    this.trivia.getQuestions()
-      .subscribe(questions => this.questions = questions)
-  }
-
-  registerAnswer([question, status]) {
-    this.answers[question] = status; 
-  }
-
-  onSubmit() {
-    this.submited = true;
-    this.getResults();
-  }
-
-  getResults() {
-    this.result = Object.values(this.answers)
-      .filter(answer => answer === 'correct')
-      .length
+    const timeout = 10;
+    interval(1000)
+      .pipe(map(x => timeout - x))
+      .pipe(takeWhile(x => x >= 0))
+      .subscribe((x) => {
+        this.time = x;
+      });
   }
 }
