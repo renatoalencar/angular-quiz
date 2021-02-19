@@ -1,1 +1,14 @@
-<app-question *ngFor="let question of questions" [question]="question"></app-question>
+<div class="app">
+    <app-question
+     *ngFor="let question of questions"
+     [question]="question"
+     [locked]="submited"
+     (select)="registerAnswer($event)"
+    ></app-question>
+    
+    <button (click)="onSubmit()" [disabled]="submited">Submit</button>
+
+    <p class="results" *ngIf="result !== null">
+        Você acertou {{ result }} de {{ questions.length }} perguntas.
+    </p>
+</div>

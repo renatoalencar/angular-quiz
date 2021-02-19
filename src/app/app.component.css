@@ -1,0 +1,10 @@
+.app {
+    max-width: 800px;
+    margin: auto;
+
+    font-size: 24px;
+}
+
+.results {
+    font-size: 2.4em;
+}

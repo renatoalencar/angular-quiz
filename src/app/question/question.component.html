@@ -6,12 +6,10 @@
     <ul class="question__answers">
       <li class="question__answers__answer"
           [class.question__answers__answer--selected]="selectedAnswer === answer"
-          [class.question__answers__answer--correct]="answered && answer === question.correct_answer"
-          [class.question__answers__answer--wrong]="answered && selectedAnswer === answer && answer !== question.correct_answer"
+          [class.question__answers__answer--correct]="locked && answer === question.correct_answer"
+          [class.question__answers__answer--wrong]="locked && selectedAnswer === answer && answer !== question.correct_answer"
           *ngFor="let answer of answers"
           (click)="onSelectAnswer(answer)"
           >{{answer}}</li>
     </ul>
-  
-    <button [disabled]="selectedAnswer === null || answered" (click)="onAnswer()">Answer</button>
   </div>
