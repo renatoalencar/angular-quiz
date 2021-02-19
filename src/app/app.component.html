@@ -1,12 +1,5 @@
 <div class="app">
-    <app-quiz [timeout]="time === 0"></app-quiz>
+    <app-quiz [timeout]="timeout"></app-quiz>
 
-    <div class="time" [class.ending]="time < 5" *ngIf="time > 0">
-        {{ time }}
-    </div>
-    <ng-template #elseBlock>
-        <div class="timeout">
-            Seu tempo acabou!
-        </div>
-    </ng-template>
+    <app-countdown [time]="10" (timeout)="onTimeout()"></app-countdown>
 </div>

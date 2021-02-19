@@ -1,0 +1,8 @@
+<div class="time" [class.ending]="timeLeft < 5" *ngIf="timeLeft > 0">
+    {{ timeLeft }}
+</div>
+<ng-template #elseBlock>
+    <div class="timeout">
+        Seu tempo acabou!
+    </div>
+</ng-template>
